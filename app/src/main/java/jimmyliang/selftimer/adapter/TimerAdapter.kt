@@ -10,13 +10,13 @@ import android.widget.ImageButton
 import android.widget.Toast
 import jimmyliang.selftimer.Model.CardModel
 import jimmyliang.selftimer.R
-import jimmyliang.selftimer.R.id.edit
 import kotlinx.android.synthetic.main.item_row.view.*
+import kotlinx.android.synthetic.main.timer_row.view.*
 
 class TimerAdapter(val context: Context, val timerCards: MutableList<CardModel>, val clickListener: (CardModel) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): RecyclerView.ViewHolder {
-        val view = LayoutInflater.from(p0.context).inflate(R.layout.item_row, p0, false)
+        val view = LayoutInflater.from(p0.context).inflate(R.layout.timer_row, p0, false)
         return TimerViewHolder(view)
     }
 
@@ -28,18 +28,13 @@ class TimerAdapter(val context: Context, val timerCards: MutableList<CardModel>,
         (p0 as TimerViewHolder).bind(timerCards[p1], clickListener)
     }
 
-    fun addNewTimer(cardModel: CardModel){
+    fun addNewTimer(cardModel: CardModel) {
         timerCards.add(cardModel)
-        notifyItemInserted(timerCards.size-1)
+        notifyItemInserted(timerCards.size - 1)
     }
 
 
     inner class TimerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-        var del = false
-
-        private fun createNewModelDialog() {
-
-        }
 
         private fun showDeleteRowDialog() {
             val builder = AlertDialog.Builder(context)
@@ -68,15 +63,15 @@ class TimerAdapter(val context: Context, val timerCards: MutableList<CardModel>,
             showDeleteRowDialog()
         }
 
-        val editButton: ImageButton = itemView.findViewById(R.id.edit)
-        val deleteButton: ImageButton = itemView.delete
+        val editButton: ImageButton = itemView.editTimer
+        val deleteButton: ImageButton = itemView.deleteTimer
 
         fun bind(cardModel: CardModel, clickListener: (CardModel) -> Unit) {
             editButton.setOnClickListener(this)
             deleteButton.setOnClickListener(remove())
             itemView.setOnClickListener { clickListener(cardModel) }
-            itemView.timerName.text = cardModel.name
-            itemView.timeRemaining.text = cardModel.longTimeToString(cardModel.startTime)
+            itemView.label.text = cardModel.name
+            itemView.duration.text = cardModel.longTimeToString(cardModel.startTime)
 
 
         }
