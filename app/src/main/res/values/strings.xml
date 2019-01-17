@@ -11,5 +11,8 @@
     <string name="editRowDialog">Edit Row</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="label">Label</string>
+
+    <string name="add_one_minute_icon_text">+60s</string>
 
 </resources>
