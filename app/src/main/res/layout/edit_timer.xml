@@ -135,8 +135,7 @@
         android:layout_above="@id/fab"
         android:layout_marginTop="@dimen/bottom_sheet_vertical_space"
         android:layout_marginStart="@dimen/bottom_sheet_edge_margin"
-        android:layout_marginEnd="@dimen/bottom_sheet_edge_margin"
-        app:columnCount="3">
+        android:layout_marginEnd="@dimen/bottom_sheet_edge_margin">
 
         <!--We require the buttons' heights to be weighted, so we can't
         reuse the GridLayoutNumpadButton style used by the bottom
@@ -189,7 +188,7 @@
         <Button
             android:id="@+id/zero"
             style="@style/GridLayoutTimerNumpadButton"
-            app:layout_column="1"
+
             android:text="0"/>
 
         <!--GridLayoutTimerNumpadButton has text attributes.. but using it
@@ -199,7 +198,7 @@
             android:id="@+id/backspace"
             android:src="@drawable/ic_backspace_24dp"
             style="@style/GridLayoutTimerNumpadButton"
-            app:layout_column="2"
+
             android:tint="?attr/themedIconTint"/>
 
     </android.support.v7.widget.GridLayout>

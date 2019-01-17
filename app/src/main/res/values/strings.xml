@@ -13,6 +13,7 @@
     <string name="no">No</string>
     <string name="label">Label</string>
 
+    <string name="title_activity_create_timer">Create Timer</string>
     <string name="add_one_minute_icon_text">+60s</string>
 
 </resources>

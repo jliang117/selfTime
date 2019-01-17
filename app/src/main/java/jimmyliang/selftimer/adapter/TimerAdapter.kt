@@ -2,7 +2,6 @@ package jimmyliang.selftimer.adapter
 
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +12,6 @@ import jimmyliang.selftimer.Model.CardModel
 import jimmyliang.selftimer.R
 import jimmyliang.selftimer.R.id.edit
 import kotlinx.android.synthetic.main.item_row.view.*
-import java.util.*
 
 class TimerAdapter(val context: Context, val timerCards: MutableList<CardModel>, val clickListener: (CardModel) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
