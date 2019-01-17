@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SelfTimer</string>
+    <string name="action_settings">Settings</string>
+    <string name="editCard">Edit</string>
+    <string name="addTimer">Add</string>
+    <string name="createRowDialog">Create New Timer</string>
+    <string name="createRowName">Name</string>
+    <string name="createRowDuration">Duration</string>
+    <string name="deleteRowDialog">Delete Timer</string>
+    <string name="deleteRowMsg">Are you sure?</string>
+    <string name="editRowDialog">Edit Row</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+</resources>
