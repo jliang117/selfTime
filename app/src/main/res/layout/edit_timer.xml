@@ -18,7 +18,7 @@
   ~ along with ClockPlus.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<RelativeLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -27,6 +27,7 @@
     tools:context=".EditTimerActivity">
 
     <RelativeLayout
+        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/edit_fields_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,6 +48,7 @@
             BaseLabel's parent is `TextAppearance.AppCompat`. We have duplicate attributes,
             but this is fine since this is the only view that is styled like this.-->
             <TextView
+
                 android:id="@+id/label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -118,6 +120,9 @@
         android:layout_centerHorizontal="true"/>-->
 
     <android.support.design.widget.FloatingActionButton
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/fab"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
@@ -127,19 +132,19 @@
      because it would be a major hassle to adapt it for timers. -->
     <!-- We're borrowing the margins for bottom sheets, since this numpad
     was "borrowed" from the bottom sheet numpad anyway. -->
-    <android.support.v7.widget.GridLayout
+    <GridLayout
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_fields_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/numpad"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/edit_fields_layout"
-        android:layout_above="@id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="500dp"
         android:layout_marginTop="@dimen/bottom_sheet_vertical_space"
         android:layout_marginStart="@dimen/bottom_sheet_edge_margin"
-        android:layout_marginEnd="@dimen/bottom_sheet_edge_margin">
+        android:layout_marginEnd="@dimen/bottom_sheet_edge_margin"
+        android:columnCount="3">
 
-        <!--We require the buttons' heights to be weighted, so we can't
-        reuse the GridLayoutNumpadButton style used by the bottom
-        sheet numpad.-->
         <Button
             android:id="@+id/one"
             style="@style/GridLayoutTimerNumpadButton"
@@ -188,7 +193,6 @@
         <Button
             android:id="@+id/zero"
             style="@style/GridLayoutTimerNumpadButton"
-
             android:text="0"/>
 
         <!--GridLayoutTimerNumpadButton has text attributes.. but using it
@@ -198,9 +202,8 @@
             android:id="@+id/backspace"
             android:src="@drawable/ic_backspace_24dp"
             style="@style/GridLayoutTimerNumpadButton"
-
             android:tint="?attr/themedIconTint"/>
 
-    </android.support.v7.widget.GridLayout>
+    </GridLayout>
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

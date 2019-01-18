@@ -54,13 +54,13 @@
         <!--https://code.google.com/p/android/issues/detail?id=18220-->
         <!--"... there is no support for color state list in the ImageView tint attribute
         prior to API 21." ImageButton is a subclass of ImageView.-->
-        <item name="android:tint">?attr/themedIconTint</item>
+        <!--<item name="android:tint">?attr/themedIconTint</item>-->
     </style>
     <style name="TimerAction.AddOneMinute">
         <item name="android:gravity">center</item>
         <item name="android:text">@string/add_one_minute_icon_text</item>
         <item name="android:textSize">@dimen/add_one_minute_text_size</item>
-        <item name="android:textColor">?attr/themedIconTint</item>
+        <item name="android:textColor">@color/colorText</item>
         <item name="android:textStyle">bold</item>
     </style>
     <style name="TimerAction.Menu">
@@ -78,5 +78,6 @@
     <style name="TimerFab" parent="BaseTimerFab"/>
     <style name="GridLayoutTimerNumpadButton" parent="GridLayoutNumpadButton">
         <item name="android:layout_height">0dp</item>
+        <item name="android:layout_rowWeight">1</item>
     </style>
 </resources>
