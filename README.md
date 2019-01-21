@@ -8,4 +8,6 @@ I was worried about self productivity, so this is an attempt at implementing a s
 # Feature set
 Users should be able to:
 Create/Delete/Edit Timers
+
 Start/Stop Timing
+
